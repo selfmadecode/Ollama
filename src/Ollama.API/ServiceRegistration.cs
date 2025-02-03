@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.AI;
-
-namespace Ollama.API;
+﻿namespace Ollama.API;
 
 public static class ServiceRegistration
 {
     public static void AddApplicationServices(this IHostApplicationBuilder builder)
     {
+        builder.Services.AddScoped<IChatService, ChatService>();
+
         builder.AddAIServices();
     }
 
